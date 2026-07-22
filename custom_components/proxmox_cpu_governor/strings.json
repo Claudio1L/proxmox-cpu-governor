@@ -1,0 +1,24 @@
+{
+  "title": "Proxmox CPU Governor",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configura Proxmox CPU Governor",
+        "description": "Inserisci i dati SSH del nodo Proxmox.",
+        "data": {
+          "host": "Host",
+          "port": "Porta SSH",
+          "username": "Nome utente",
+          "private_key": "Percorso chiave privata"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossibile connettersi al nodo Proxmox",
+      "unsupported_governor": "Il governor corrente non è supportato"
+    },
+    "abort": {
+      "already_configured": "Questo nodo Proxmox è già configurato"
+    }
+  }
+}

@@ -4,6 +4,7 @@ import asyncio
 import base64
 import re
 import shlex
+import logging
 
 import asyncssh
 import voluptuous as vol
@@ -27,6 +28,8 @@ from .const import (
     DEFAULT_USERNAME,
     DOMAIN,
 )
+
+_LOGGER = logging.getLogger(__name__)
 
 GOVERNOR_SCRIPT_PATH = "/usr/local/sbin/ha-cpu-governor"
 SUDOERS_PATH = "/etc/sudoers.d/homeassistant-cpu-governor"
@@ -245,7 +248,8 @@ class ProxmoxCpuGovernorConfigFlow(
                             data=entry_data,
                         )
 
-            except Exception:
+            except Exception as ex:
+                _LOGGER.exception("Bootstrap failed")
                 errors["base"] = "cannot_connect"
 
         data_schema = vol.Schema(

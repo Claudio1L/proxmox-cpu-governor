@@ -4,17 +4,18 @@
     "step": {
       "user": {
         "title": "Configura Proxmox CPU Governor",
-        "description": "Inserisci i dati SSH del nodo Proxmox.",
+        "description": "Inserisci i dati del nodo Proxmox. La password root viene usata solo per installare automaticamente script, utente e permessi; non viene salvata.",
         "data": {
           "host": "Host",
           "port": "Porta SSH",
-          "username": "Nome utente",
-          "private_key": "Percorso chiave privata"
+          "username": "Nome utente operativo",
+          "private_key": "Percorso chiave privata",
+          "root_password": "Password root"
         }
       }
     },
     "error": {
-      "cannot_connect": "Impossibile connettersi al nodo Proxmox",
+      "cannot_connect": "Connessione o configurazione automatica del nodo Proxmox non riuscita",
       "unsupported_governor": "Il governor corrente non è supportato"
     },
     "abort": {

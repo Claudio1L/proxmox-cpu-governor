@@ -4,6 +4,7 @@ CONF_HOST = "host"
 CONF_PORT = "port"
 CONF_USERNAME = "username"
 CONF_PRIVATE_KEY = "private_key"
+CONF_ROOT_PASSWORD = "root_password"
 
 DEFAULT_PORT = 22
 DEFAULT_USERNAME = "homeassistant"
